@@ -38,43 +38,8 @@ class KegControl extends React.Component {
     this.setState({selectedKeg: selectedKeg});
   }
 
-  handleBuyingPint = (keg) => {
-    const { dispatch } = this.props;
-    const action = a.buyPint(keg);
-    dispatch(action);
+  handleBuyingPint = (id) => {
   }
-  //       {
-  //         name: "Schlutz",
-  //         brand: "Frat Guyz",
-  //         flavor: " Cheap, crisp and guzzleable",
-  //         price: "42",
-  //         alcohol: "6.20",
-  //         pints: 100,
-  //         id: 0
-  //       },
-  //       {
-  //         name: "Citrus Crush",
-  //         brand: "Mountain Bros.",
-  //         flavor: " A citrusy IPA with stong hop notes",
-  //         price: "85",
-  //         alcohol: "7.2",
-  //         pints: 100,
-  //         id: 1
-  //       },
-  //       {
-  //         name: "Irish Breath",
-  //         brand: "Brim Reaper",
-  //         flavor: " A dark, nutty and strong ale",
-  //         price: "59",
-  //         alcohol: "11.5",
-  //         pints: 100,
-  //         id: 2
-  //       }
-  //     ],
-  //     selectedKeg: null
-  //   };
-  //   this.handleClick = this.handleClick.bind(this);
-  // }
 
   render(){
     let currentlyVisibleState = null;
@@ -108,7 +73,7 @@ class KegControl extends React.Component {
 }
 
 KegControl.propTypes = {
-  masterKegList: PropTypes.object
+  masterKegList: PropTypes.array
 };
 
 const mapStateToProps = state => {

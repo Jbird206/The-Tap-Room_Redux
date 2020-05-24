@@ -1,5 +1,5 @@
 import formVisibleReducer from './form-visible-reducer';
-import kegListReducer from './keg-list-reducer';
+import kegListReducer from './keg-list-reducers';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({

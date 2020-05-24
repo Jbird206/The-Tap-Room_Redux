@@ -14,7 +14,7 @@ function KegDetail(props){
         <p>Alc/Vol: {keg.alcohol}%</p>
         <p>Pints: {keg.pints}</p>
         <img id="kegDetailImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTg-l_V397Gb4Y8-yobSexj-cb27VD-cD_72EhY2bdtM7DMfod7&usqp=CAU" alt="keg" /> <br />
-        <button onClick = {() => props.onBuyingPint(keg.name)}>Buy Pint!</button><br />
+        <button onClick = {() => console.log(keg.pints -= 1)}>Buy Pint!</button><br />
     </React.Fragment>
   );
 }
