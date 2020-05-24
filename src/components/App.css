@@ -25,7 +25,21 @@ button {
   border-radius: 5px;
   font-weight: 800;
   box-shadow: 10px 10px 18px #200e0e;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
+
+button:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 
 h2, h3 {
   padding: 2%;
@@ -49,12 +63,12 @@ form {
   border-color: rgb(218, 126, 13);
   border-width: 2px;
   border-style: solid;
-  margin: 10px;
+  /* margin: 10px; */
   padding: 0.5%;
   position: fixed;
+  right: 10px;
+  left: 90px;
   width: 1700px;
-  text-align: center;
-  align-content: center;
   opacity: 60%;
 }
 
@@ -81,6 +95,7 @@ form {
 #DailyKeg {
   background-color: var(--main-color);
   border-style: solid;
+  border-color: var(--secondary-color);
   border-radius: 5px;
   box-shadow: 10px 10px 18px #200e0e;
 }
