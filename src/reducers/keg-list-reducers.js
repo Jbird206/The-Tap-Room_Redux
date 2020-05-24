@@ -14,3 +14,7 @@ export default (state = {}, action) => {
           id: id
         }
     });
+    default:
+        return state;
+      }
+    };
