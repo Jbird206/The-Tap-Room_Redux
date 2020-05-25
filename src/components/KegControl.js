@@ -1,8 +1,8 @@
 import React from 'react';
 import NewKegForm from './NewKegForm';
 import KegList from './KegList';
-import DailyKeg from './DailyKeg'
-import KegDetail from './KegDetail'
+import DailyKeg from './DailyKeg';
+import KegDetail from './KegDetail';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from '../actions/index';
@@ -13,7 +13,6 @@ class KegControl extends React.Component {
     super(props);
     this.state = {
       selectedKeg: null,
-      editing:false
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -38,7 +37,10 @@ class KegControl extends React.Component {
     this.setState({selectedKeg: selectedKeg});
   }
 
-  handleBuyingPint = (id) => {
+  handleBuyingPint = () => {
+    const { dispatch } = this.props;
+    const action = a.buyPint();
+    dispatch(action);
   }
 
   render(){
@@ -46,7 +48,7 @@ class KegControl extends React.Component {
     let buttonText = null;
 
     if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} onBuyingPint={this.handleBuyingPint}/>
+      currentlyVisibleState = <KegDetail keg={this.state.selectedKeg} onBuyingPint={this.handleBuyingPint}/>
       buttonText = "Return to Keg List";
     } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
@@ -73,7 +75,7 @@ class KegControl extends React.Component {
 }
 
 KegControl.propTypes = {
-  masterKegList: PropTypes.array
+  masterKegList: PropTypes.object
 };
 
 const mapStateToProps = state => {

@@ -11,12 +11,6 @@ export const addKeg = (keg) => {
       id: id
     }
   }
-//export const addKeg = (keg) => {
-  
-  export const toggleForm = () => ({
-    type: 'TOGGLE_FORM'
-  }); 
-  
   
   export const buyPint = (keg) => {
     const { name, brand, flavor, price, alcohol, pints, id } = keg;
@@ -27,7 +21,11 @@ export const addKeg = (keg) => {
       flavor: flavor,
       price: price,
       alcohol: alcohol,
-      pints: pints - 1,
+      pints: pints,
       id: id
     }
-  } 
+  }
+  
+  export const toggleForm = () => ({
+    type: 'TOGGLE_FORM'
+  });

@@ -50,7 +50,7 @@ borderColor: '#fc9803'
           type='text'
           name='brand'
           placeholder='Keg Brand' /><br />
-        <label><b>Flavor></b></label>
+        <label><b>Flavor</b></label>
         <input
           type='text'
           name='flavor'
